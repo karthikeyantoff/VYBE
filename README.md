@@ -18,6 +18,7 @@
     <img src="https://img.shields.io/badge/Tailwind-v4-38BDF8?style=flat-square&logo=tailwindcss&logoColor=white" alt="Tailwind CSS v4" />
     <img src="https://img.shields.io/badge/Socket.io-4-010101?style=flat-square&logo=socket.io&logoColor=white" alt="Socket.io 4" />
     <img src="https://img.shields.io/badge/Author-Karthikeyan%20T-purple?style=flat-square" alt="Forward Deployed Engineer" />
+    <img src="https://img.shields.io/badge/Contributors-1%20(Sole%20Author)-success?style=flat-square" alt="Sole Contributor" />
   </p>
 
   <p>
