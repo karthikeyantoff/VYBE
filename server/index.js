@@ -404,4 +404,5 @@ function buildWelcomePage(version) {
 </html>`;
 }
 
+export default app;
 export { app, server };
