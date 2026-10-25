@@ -16,9 +16,16 @@
     <img src="https://img.shields.io/badge/Express-5-000000?style=flat-square&logo=express&logoColor=white" alt="Express 5" />
     <img src="https://img.shields.io/badge/MongoDB-Atlas-47A248?style=flat-square&logo=mongodb&logoColor=white" alt="MongoDB Atlas" />
     <img src="https://img.shields.io/badge/Tailwind-v4-38BDF8?style=flat-square&logo=tailwindcss&logoColor=white" alt="Tailwind CSS v4" />
-    <img src="https://img.shields.io/badge/Socket.io-4-010101?style=flat-square&logo=socket.io&logoColor=white" alt="Socket.io 4" />
+    <img src="https://img.shields.io/badge/Deployment-Vercel-black?style=flat-square&logo=vercel&logoColor=white" alt="Vercel Deployment" />
     <img src="https://img.shields.io/badge/Author-Karthikeyan%20T-purple?style=flat-square" alt="Forward Deployed Engineer" />
     <img src="https://img.shields.io/badge/Contributors-1%20(Sole%20Author)-success?style=flat-square" alt="Sole Contributor" />
+  </p>
+
+  <p>
+    🚀 <strong><a href="https://vybe-app-ecru.vercel.app/">Live Web App</a></strong> •
+    🛡️ <strong><a href="https://vybe-admin-eight.vercel.app/login">Live Admin Console</a></strong> •
+    ⚙️ <strong><a href="https://vybe-backend-flax.vercel.app/">Live Backend API</a></strong> •
+    📖 <strong><a href="https://vybe-backend-flax.vercel.app/api-docs">Swagger API Docs</a></strong>
   </p>
 
   <p>
@@ -37,18 +44,19 @@
 
 ## 📸 Live Application Previews
 
-| 📱 Consumer Frontend (`:5173`) | 🛡️ Standalone Admin Console (`:5174`) |
+| 📱 [Consumer Frontend (Live)](https://vybe-app-ecru.vercel.app/) | 🛡️ [Standalone Admin Console (Live)](https://vybe-admin-eight.vercel.app/login) |
 | :---: | :---: |
-| <a href="./docs/screenshots/vybe-frontend-app.png"><img src="./docs/screenshots/vybe-frontend-app.png" alt="VYBE Consumer Social Network Frontend" width="100%" /></a><br/><sub><b>Consumer Experience:</b> 3-Column responsive layout, user profile `@vybeadmin`, trending discovery & navigation</sub> | <a href="./docs/screenshots/vybe-admin-dashboard.png"><img src="./docs/screenshots/vybe-admin-dashboard.png" alt="VYBE Master Admin Console" width="100%" /></a><br/><sub><b>Master Command Hub:</b> Live MongoDB Atlas telemetry, weekly growth velocity & staff moderation</sub> |
+| <a href="https://vybe-app-ecru.vercel.app/"><img src="./docs/screenshots/vybe-frontend-app.png" alt="VYBE Consumer Social Network Frontend" width="100%" /></a><br/><sub><b>Consumer Web Experience:</b> 3-Column responsive layout, user profile `@vybeadmin`, trending discovery & navigation</sub><br/>🔗 <b><a href="https://vybe-app-ecru.vercel.app/">https://vybe-app-ecru.vercel.app/</a></b> | <a href="https://vybe-admin-eight.vercel.app/login"><img src="./docs/screenshots/vybe-admin-dashboard.png" alt="VYBE Master Admin Console" width="100%" /></a><br/><sub><b>Master Command Hub:</b> Live MongoDB Atlas telemetry, weekly growth velocity & staff moderation</sub><br/>🔗 <b><a href="https://vybe-admin-eight.vercel.app/login">https://vybe-admin-eight.vercel.app/login</a></b> |
 
 <br/>
 
 <div align="center">
-  <p><strong>⚙️ Backend REST API & Real-Time Engine (<code>:5000</code>)</strong></p>
-  <a href="./docs/screenshots/vybe-backend-api.png">
+  <p><strong>⚙️ <a href="https://vybe-backend-flax.vercel.app/">Backend REST API & Real-Time Engine (Live)</a></strong></p>
+  <a href="https://vybe-backend-flax.vercel.app/">
     <img src="./docs/screenshots/vybe-backend-api.png" alt="VYBE Backend API Landing Page" width="85%" />
   </a>
   <p><sub>Interactive API documentation, Swagger OpenAPI 3 specs & live health diagnostics</sub></p>
+  <p>🔗 <b><a href="https://vybe-backend-flax.vercel.app/">https://vybe-backend-flax.vercel.app/</a></b> • 📖 <b><a href="https://vybe-backend-flax.vercel.app/api-docs">Swagger UI Docs</a></b> • 🩺 <b><a href="https://vybe-backend-flax.vercel.app/api/health">Health Endpoint</a></b></p>
 </div>
 
 ---
@@ -67,10 +75,10 @@ VYBE is architected as three independently maintainable, buildable, and deployab
 ┌───────────────────────────┐     REST / WS      │      REST / WS      ┌───────────────────────────┐
 │     Consumer Frontend     ├────────────────────┼─────────────────────┤ Standalone Admin Console  │
 │  React 19 + Vite 8 SPA    │                    │                     │   Vite 8 + Tailwind v4    │
-│    (Port 5173 / Vercel)   │         ┌──────────┴──────────┐          │    (Port 5174 / Vercel)   │
+│  (vybe-app-ecru.vercel)   │         ┌──────────┴──────────┐          │ (vybe-admin-eight.vercel) │
 └───────────────────────────┘         │  Backend API Server │          └───────────────────────────┘
-                                      │  Express 5 + WS 4   │
-                                      │ (Port 5000 / Render)│
+                                      │  Express 5 Server   │
+                                      │(vybe-backend-flax...)
                                       └──────────┬──────────┘
                                                  │
                                                  ▼
@@ -80,9 +88,9 @@ VYBE is architected as three independently maintainable, buildable, and deployab
                                   └──────────────────────────────┘
 ```
 
-1. **📱 Consumer Frontend App (`client/`)** — Running on Port `5173`. Deployable to **Vercel** or **Netlify**. Full-featured consumer social web app featuring a modern 3-column layout, personalized feed, bookmarks, progressive 5-step registration stepper, and email verification states.
-2. **🛡️ Standalone Admin Console (`admin/`)** — Running on Port `5174`. Deployable independently to **Vercel** or **Netlify** (e.g. `admin.vybe.dev`). Isolated staff management station with real-time platform metrics, user moderation, post moderation, and comment cleanup.
-3. **⚙️ Backend API & Real-Time Engine (`server/`)** — Running on Port `5000`. Deployable to **Render** or **Railway**. Express 5 REST API, Socket.io WebSocket server, Nodemailer delivery engine, Cloudinary media CDN, and MongoDB Atlas ODM.
+1. **📱 Consumer Frontend App (`client/`)** — Live at [https://vybe-app-ecru.vercel.app/](https://vybe-app-ecru.vercel.app/). Full-featured consumer social web app featuring a modern 3-column layout, personalized feed, bookmarks, progressive 5-step registration stepper, and email verification states.
+2. **🛡️ Standalone Admin Console (`admin/`)** — Live at [https://vybe-admin-eight.vercel.app/login](https://vybe-admin-eight.vercel.app/login). Isolated staff management station with real-time platform metrics, user moderation, post moderation, and comment cleanup.
+3. **⚙️ Backend API Server (`server/`)** — Live at [https://vybe-backend-flax.vercel.app/](https://vybe-backend-flax.vercel.app/). Express 5 REST API, Nodemailer delivery engine, Cloudinary media CDN, and MongoDB Atlas ODM.
 
 ---
 
@@ -178,63 +186,55 @@ npm run dev
 
 ---
 
-## Deployment Guide (3 Independent Services)
+## Deployment Guide (3 Independent Services on Vercel)
 
-### Target 1: Backend API & WebSocket Engine (Deploy to Render / Railway)
+All 3 projects include native `vercel.json` configurations for seamless one-click zero-config deployment on **Vercel**.
 
-1. Connect your repository `https://github.com/karthikeyantoff/VYBE` to **Render** as a **Web Service**.
-2. Configure settings:
-   - **Root Directory:** `server`
-   - **Environment:** `Node`
-   - **Build Command:** `npm install`
-   - **Start Command:** `npm start`
-3. Environment Variables:
-   | Variable | Value | Description |
-   |---|---|---|
-   | `NODE_ENV` | `production` | Production mode |
-   | `PORT` | `5000` | Port (Render assigns dynamically) |
-   | `MONGO_URI` | `mongodb+srv://...` | MongoDB Atlas Connection String |
-   | `JWT_SECRET` | `32+_random_character_string` | Secure session signing key |
-   | `JWT_EXPIRES_IN` | `7d` | Token validity duration |
-   | `CLIENT_URL` | `https://your-frontend.vercel.app` | Production Frontend URL (no trailing slash) |
-   | `ADMIN_URL` | `https://your-admin.vercel.app` | Production Admin URL (no trailing slash) |
-   | `CLOUDINARY_CLOUD_NAME` | `cblqllb4` | Cloudinary Cloud Name |
-   | `CLOUDINARY_API_KEY` | `your_key` | Cloudinary Key |
-   | `CLOUDINARY_API_SECRET` | `your_secret` | Cloudinary Secret |
-   | `SMTP_HOST` | `smtp.sendgrid.net` / `smtp.resend.com` | Production SMTP Provider |
-   | `SMTP_PORT` | `587` | SMTP Port |
-   | `SMTP_USER` | `apikey` | SMTP Username |
-   | `SMTP_PASS` | `your_smtp_key` | SMTP Password |
-   | `EMAIL_FROM` | `"VYBE" <no-reply@yourdomain.com>` | Verified sender address |
+### Target 1: Backend API (`server/` on Vercel)
+- **Live URL:** [https://vybe-backend-flax.vercel.app/](https://vybe-backend-flax.vercel.app/)
+- **Swagger Docs:** [https://vybe-backend-flax.vercel.app/api-docs](https://vybe-backend-flax.vercel.app/api-docs)
+- **Root Directory:** `server`
+- **Framework Preset:** `Other`
+- **Environment Variables:**
+  | Variable | Value | Description |
+  |---|---|---|
+  | `NODE_ENV` | `production` | Production mode |
+  | `MONGO_URI` | `mongodb+srv://karthikeyantoff_db_user:qil8g6DHV5oxGus6@cluster0.lsat1p6.mongodb.net/VYBE_db?retryWrites=true&w=majority` | Live MongoDB Atlas Cluster |
+  | `JWT_SECRET` | `vybe_jwt_secret_super_secure_key_2026_at_least_32_chars` | Session token signing key |
+  | `JWT_EXPIRES_IN` | `7d` | Token expiration |
+  | `CLIENT_URL` | `https://vybe-app-ecru.vercel.app` | Production Frontend Origin |
+  | `ADMIN_URL` | `https://vybe-admin-eight.vercel.app` | Production Admin Origin |
+  | `CLOUDINARY_CLOUD_NAME` | `cblqllb4` | Cloudinary Name |
+  | `CLOUDINARY_API_KEY` | `395367419741642` | Cloudinary Key |
+  | `CLOUDINARY_API_SECRET` | `1SG9xf-6HZKzVgQu3Im-nFKuFZ4` | Cloudinary Secret |
+  | `ADMIN_EMAIL` | `admin@vybe.dev` | Master Admin Email |
+  | `ADMIN_PASSWORD` | `VybeAdmin2026!` | Master Admin Password |
 
 ---
 
-### Target 2: Consumer Frontend (Deploy to Vercel / Netlify)
-
-1. Connect your repository to **Vercel** or **Netlify**.
-2. Set configuration:
-   - **Root / Base Directory:** `client`
-   - **Build Command:** `npm run build`
-   - **Output Directory:** `dist`
-3. Environment Variables:
-   | Variable | Value |
-   |---|---|
-   | `VITE_API_URL` | `https://<your-backend-api>.onrender.com/api` |
-   | `VITE_SOCKET_URL` | `https://<your-backend-api>.onrender.com` |
+### Target 2: Consumer Frontend (`client/` on Vercel)
+- **Live URL:** [https://vybe-app-ecru.vercel.app/](https://vybe-app-ecru.vercel.app/)
+- **Root Directory:** `client`
+- **Framework Preset:** `Vite`
+- **Build Command:** `npm run build`
+- **Output Directory:** `dist`
+- **Environment Variables:**
+  | Variable | Value |
+  |---|---|
+  | `VITE_API_URL` | `https://vybe-backend-flax.vercel.app/api` |
 
 ---
 
-### Target 3: Standalone Admin Panel (Deploy to Vercel / Netlify)
-
-1. Create a new site in **Vercel** or **Netlify** (e.g. `admin.vybe.dev`).
-2. Set configuration:
-   - **Root / Base Directory:** `admin`
-   - **Build Command:** `npm run build`
-   - **Output Directory:** `dist`
-3. Environment Variables:
-   | Variable | Value |
-   |---|---|
-   | `VITE_API_URL` | `https://<your-backend-api>.onrender.com/api` |
+### Target 3: Standalone Admin Console (`admin/` on Vercel)
+- **Live URL:** [https://vybe-admin-eight.vercel.app/login](https://vybe-admin-eight.vercel.app/login)
+- **Root Directory:** `admin`
+- **Framework Preset:** `Vite`
+- **Build Command:** `npm run build`
+- **Output Directory:** `dist`
+- **Environment Variables:**
+  | Variable | Value |
+  |---|---|
+  | `VITE_API_URL` | `https://vybe-backend-flax.vercel.app/api` |
 
 ---
 
@@ -314,6 +314,9 @@ npm test
 *Forward Deployed Engineer*
 - 💻 GitHub: [@karthikeyantoff](https://github.com/karthikeyantoff)
 - 🚀 Repository: [https://github.com/karthikeyantoff/VYBE](https://github.com/karthikeyantoff/VYBE)
+- 🌐 Live Consumer App: [https://vybe-app-ecru.vercel.app/](https://vybe-app-ecru.vercel.app/)
+- 🛡️ Live Admin Console: [https://vybe-admin-eight.vercel.app/login](https://vybe-admin-eight.vercel.app/login)
+- ⚙️ Live Backend API: [https://vybe-backend-flax.vercel.app/](https://vybe-backend-flax.vercel.app/)
 
 ---
 
