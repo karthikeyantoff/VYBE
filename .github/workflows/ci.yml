@@ -1,0 +1,97 @@
+name: VYBE CI
+
+on:
+  push:
+    branches: [ "main", "master" ]
+  pull_request:
+    branches: [ "main", "master" ]
+
+jobs:
+  client:
+    name: Client Build & Asset Verification
+    runs-on: ubuntu-latest
+    defaults:
+      run:
+        working-directory: client
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: 20
+          cache: "npm"
+          cache-dependency-path: client/package-lock.json
+
+      - name: Install client dependencies
+        run: npm ci
+
+      - name: Build client production bundle
+        run: npm run build
+
+  admin:
+    name: Standalone Admin Panel Build Verification
+    runs-on: ubuntu-latest
+    defaults:
+      run:
+        working-directory: admin
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: 20
+          cache: "npm"
+          cache-dependency-path: admin/package-lock.json
+
+      - name: Install admin dependencies
+        run: npm ci
+
+      - name: Build admin production bundle
+        run: npm run build
+
+  server:
+    name: Server Integration Tests & API Verification
+    runs-on: ubuntu-latest
+    defaults:
+      run:
+        working-directory: server
+
+    services:
+      mongodb:
+        image: mongo:7.0
+        ports:
+          - 27017:27017
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: 20
+          cache: "npm"
+          cache-dependency-path: server/package-lock.json
+
+      - name: Install server dependencies
+        run: npm ci
+
+      - name: Run automated test suite
+        env:
+          NODE_ENV: test
+          PORT: 5001
+          MONGO_URI: mongodb://localhost:27017/pulse_test
+          JWT_SECRET: vybe_ci_test_super_secret_jwt_key_at_least_32_chars
+          JWT_EXPIRES_IN: 7d
+          CLIENT_URL: http://localhost:5173
+          ADMIN_URL: http://localhost:5174
+          ADMIN_EMAIL: admin@vybe.dev
+          ADMIN_USERNAME: vybeadmin
+          ADMIN_PASSWORD: VybeAdmin2026!
+        run: npm test
